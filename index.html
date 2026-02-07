@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phina / Blubbela</title>
+
+<!-- pixel font -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --pink:#ff9dcf;
+  --pink-dark:#ff6fb2;
+  --glow:#ffd1e8;
+  --bg:#fff0f7;
+}
+
+/* ===== GLOW ANIMATIONS ===== */
+@keyframes glowPulse {
+  0%   { box-shadow: 0 0 6px var(--glow); }
+  50%  { box-shadow: 0 0 14px var(--glow); }
+  100% { box-shadow: 0 0 6px var(--glow); }
+}
+
+@keyframes textGlow {
+  0%   { text-shadow: 0 0 6px var(--glow); }
+  50%  { text-shadow: 0 0 12px var(--glow); }
+  100% { text-shadow: 0 0 6px var(--glow); }
+}
+
+body{
+  margin:0;
+  font-family:"Press Start 2P", monospace;
+  background:var(--bg);
+  background-image:repeating-linear-gradient(
+    to bottom,
+    var(--bg),
+    var(--bg) 20px,
+    #ffdbea 21px
+  );
+  color:#9a4b6a;
+  font-size:11px;
+}
+
+.page{
+  max-width:420px;
+  margin:auto;
+  padding:10px 12px 20px;
+  position:relative;
+}
+
+.center{text-align:center;}
+.small{font-size:9px; opacity:.85;}
+
+/* ===== TOGGLE BUTTON ===== */
+.toggle {
+  text-align:center;
+  margin:6px 0 10px;
+}
+
+.toggle button{
+  font-family:"Press Start 2P", monospace;
+  font-size:9px;
+  padding:6px 10px;
+  border-radius:10px;
+  border:2px solid var(--pink);
+  background:white;
+  color:var(--pink-dark);
+}
+
+/* ===== TEXT ===== */
+h1{
+  font-size:14px;
+  margin:6px 0;
+  color:var(--pink-dark);
+}
+
+h2{
+  font-size:11px;
+  margin:0 0 6px;
+  color:var(--pink-dark);
+}
+
+/* ===== CARDS ===== */
+.card{
+  background:#fff7fb;
+  border-radius:12px;
+  padding:10px;
+  margin:8px 0;
+  line-height:1.5;
+}
+
+/* ===== HEART FRAME ===== */
+.heart-frame{
+  width:160px;
+  display:block;
+  margin:6px auto;
+}
+
+/* ===== SOCIALS ===== */
+.socials a{
+  display:block;
+  background:linear-gradient(135deg,var(--pink),var(--pink-dark));
+  color:white;
+  text-decoration:none;
+  padding:7px;
+  border-radius:10px;
+  margin:6px 0;
+  font-size:10px;
+}
+
+/* ===== ASK BOX ===== */
+.ask-box{
+  border:2px dashed var(--pink);
+  background:white;
+  border-radius:12px;
+  padding:8px;
+  text-align:center;
+}
+
+.fake-input{
+  background:#ffeaf3;
+  border-radius:8px;
+  padding:6px;
+  margin-top:6px;
+  font-size:9px;
+}
+
+/* ===== STICKERS ===== */
+.sticker{
+  position:absolute;
+  width:64px;
+  pointer-events:none;
+}
+
+.sticker.left{left:-8px; top:140px;}
+.sticker.right{right:-8px; top:410px;}
+
+/* ===== DIVIDER ===== */
+.divider{
+  text-align:center;
+  font-size:9px;
+  margin:10px 0;
+  opacity:.5;
+}
+
+/* ===== DNI ===== */
+.dni{
+  background:#fff0f6;
+  border:2px solid #ff9dcf;
+  color:#a14a73;
+  font-size:9px;
+}
+
+/* ===== GLOW ENABLED ===== */
+.glow h1{ animation:textGlow 2.5s infinite; }
+.glow .card,
+.glow .ask-box,
+.glow .socials a,
+.glow .dni{ animation:glowPulse 3s infinite; }
+.glow .sticker,
+.glow .heart-frame{ filter:drop-shadow(0 0 8px var(--glow)); }
+</style>
+</head>
+
+<body>
+<div class="page glow" id="page">
+
+  <!-- stickers -->
+  <img src="images/CHIBI_LEFT.png" class="sticker left">
+  <img src="images/CHIBI_RIGHT.png" class="sticker right">
+
+  <h1>Phina / Blubbela</h1>
+
+  <div class="toggle">
+    <button onclick="toggleGlow()">✨ TOGGLE GLOW</button>
+  </div>
+
+  <img src="images/HEART_FRAME.png" class="heart-frame">
+
+  <div class="card center">
+    (≧◡≦) ♡<br>
+    <b>she / her</b><br><br>
+    ♡ 9TE + Infp<br>
+    ♡ lesbian<br>
+    ♡ minor<br><br>
+    ♡ 1# Robin and 1x fan (trust)
+  </div>
+
+  <div class="card">
+    <h2>My socials</h2>
+    <div class="socials">
+      <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
+    </div>
+  </div>
+
+  <div class="card ask-box">
+    <b>Ask me something!</b>
+    <div class="fake-input">Send anonymously 🖊️🙂</div>
+    <div class="fake-input">Send anonymously 🎨🙂</div>
+    <div class="small">Feel free to send me stuff idk<br>(^q^)</div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <div class="card">
+    <h2>About me</h2>
+    Current interests are<br>
+    Hsr, Hi3rd,<br>
+    Forsaken,<br>
+    pjsk, alnst and more that im too lazy to list...<br><br>
+    I like drawing, making widgets and playing games all day long because im <b>UNEMPLOYED</b>
+  </div>
+
+  <div class="card center">
+    <h2>My fav characters</h2>
+    (add images here ♡)
+  </div>
+
+  <div class="card dni center">
+    <h2>DNI</h2>
+    proshippers<br>
+    basic dni criteria<br>
+    disrespectful / hateful ppl<br>
+    drama starters
+  </div>
+
+</div>
+
+<script>
+function toggleGlow(){
+  document.getElementById("page").classList.toggle("glow");
+}
+</script>
+</body>
+</html>
